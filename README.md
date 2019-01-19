@@ -176,7 +176,7 @@ nodes attached to a top level div.
 var div = WebVTT.convertCueToDOMTree(window, cuetext);
 ```
 
-## WebVTT.processCues(window, cues, overlay)
+## WebVTT.processCues(window, cues, overlay, options)
 
 Converts the cuetext of the cues passed to it to DOM trees&mdash;by calling convertCueToDOMTree&mdash;and
 then runs the processing model steps of the WebVTT specification on the divs. The processing model applies the necessary
@@ -184,8 +184,11 @@ CSS styles to the cue divs to prepare them for display on the web page. During t
 to a block level element (overlay). The overlay should be a part of the live DOM as the algorithm will use the
 computed styles (only of the divs to do overlap avoidance.
 
+You can pass an optional options object as an argument to override the default styles. See the code for what styles
+are supported.
+
 ```javascript
-var divs = WebVTT.processCues(window, cues, overlay);
+var divs = WebVTT.processCues(window, cues, overlay, options);
 ```
 
 ## ParsingError
