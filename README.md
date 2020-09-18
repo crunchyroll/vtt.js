@@ -13,6 +13,7 @@ This is a fork of [Mozilla's vtt.js](http://github.com/mozilla/vtt.js) (which is
   - [WebVTT.Parser](#webvttparser)
     - [parse(data)](#parsedata)
     - [flush()](#flush)
+    - [reset()](#reset)
     - [onregion(region)](#onregionregion)
     - [oncue(cue)](#oncuecue)
     - [onflush()](#onflush)
@@ -83,6 +84,7 @@ parser.onparsingerror = function(e) {};
 parser.parse(moreData);
 parser.parse(moreData);
 parser.flush();
+parser.reset();
 ```
 
 The Parser constructor is passed a window object with which it will create new
@@ -110,6 +112,10 @@ parser.flush();
 
 Indicates that no more data is expected and will force the parser to parse any
 unparsed data that it may have. Will also trigger [onflush](#onflush).
+
+### reset()
+
+Resets the parser to the initial state so that it can parse a new file.
 
 ### onregion(region)
 
